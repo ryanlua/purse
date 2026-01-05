@@ -60,6 +60,16 @@ local HOTBAR_SLOTS_MINI = 5 -- (1)!
 
 The topbar icon is decoupled from Purse's functionality, so you can remove it by disabling the [`TopbarIcon`][TopbarIcon] script. In addition, a [`ContextAction`][ContextAction] script is included to bind opening and closing the inventory to a keycode (set to backquote <kbd>`</kbd> by default).
 
+![Screenshot of topbar icon enabled](assets/topbar-icon-enabled.png)
+/// caption
+Topbar icon enabled
+///
+
+![Screenshot of topbar icon disabled](assets/topbar-icon-disabled.png)
+/// caption
+Topbar icon disabled
+///
+
 Your explorer window should look similar to the following when you disable the `TopbarIcon` script and enable the `ContextAction` script.
 
 ![Explorer window showing TopbarIcon disabled and ContextAction enabled under Purse](assets/disable-topbar.png)
