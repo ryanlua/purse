@@ -15,6 +15,9 @@ local SLOT_EQUIP_COLOR = Color3.new(233 / 255, 90 / 255, 90 / 255) -- (1)!
 1.  Changed from blue `#!lua Color3.new(90 / 255, 142 / 255, 233 / 255)` to red `#!lua Color3.new(233 / 255, 90 / 255, 90 / 255)`
 
 ![Screenshot of the hotbar with a slot equipped with a red selection outline](assets/red-slot-equip-color.png)
+/// caption
+Hotbar with a red equip outline
+///
 
 ## Increasing Hotbar Slots and Inventory Rows
 
@@ -55,6 +58,9 @@ local HOTBAR_SLOTS_MINI = 5 -- (1)!
 1.  Changed from 3 hotbar slots to 5 hotbar slots
 
 ![Screenshot of the hotbar and inventory with modified mini size](assets/hotbar-inventory-sample.png)
+/// caption
+Increased hotbar slots on phone and tablet devices
+///
 
 ## Removing Topbar Icon
 
