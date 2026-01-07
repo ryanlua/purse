@@ -9,9 +9,6 @@ env:
   OUTPUT_NAME: Purse
   BUILD_PROJECT: package.project.json
 
-permissions:
-  contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
