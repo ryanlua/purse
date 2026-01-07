@@ -1,20 +1,16 @@
 name: Create Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      tag_name:
-        description: 'Tag name'
-        required: true
-        type: string
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
 
 env:
   OUTPUT_NAME: Purse
   BUILD_PROJECT: package.project.json
-
-permissions:
-  contents: write
-  discussions: write
 
 jobs:
   build:
@@ -40,7 +36,7 @@ jobs:
       - name: Archive build files
         uses: actions/upload-artifact@v6
         with:
-          name: release-file-builds
+          name: ${{ env.OUTPUT_NAME }}
           path: builds/
           if-no-files-found: error
 
@@ -63,17 +59,14 @@ jobs:
       - name: Download build files
         uses: actions/download-artifact@v7
         with:
-          name: release-file-builds
+          name: ${{ env.OUTPUT_NAME }}
           path: builds/
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           files: builds/*
           generate_release_notes: true
-          tag_name: ${{ inputs.tag_name }}
-          draft: true
 
       - name: Publish to Wally
         run: wally publish
