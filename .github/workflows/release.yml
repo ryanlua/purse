@@ -65,7 +65,6 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           files: builds/*
           generate_release_notes: true
 
