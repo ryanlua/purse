@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -22,17 +22,8 @@ jobs:
       - name: Setup Selene
         uses: CompeyDev/setup-rokit@v0.1.2
 
-      - name: Run Selene
-        run: selene src
-
-  style:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-
       - name: Run StyLua
-        uses: JohnnyMorganz/stylua-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          version: latest
-          args: --check src
+        run: stylua --check .
+
+      - name: Run selene
+        run: selene .
