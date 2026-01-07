@@ -10,6 +10,10 @@ on:
       - ".github/workflows/ci.yml"
       - "**.luau"
 
+env:
+  OUTPUT_NAME: Purse
+  BUILD_PROJECT: package.project.json
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,8 +23,26 @@ jobs:
       - name: Setup Rokit
         uses: CompeyDev/setup-rokit@v0.1.2
 
+      - name: Setup Wally
+        run: |
+          wally install
+          rojo sourcemap develop.project.json --output sourcemap.json
+          wally-package-types --sourcemap sourcemap.json Packages/
+
       - name: Run StyLua
         run: stylua --check src/ models/
 
       - name: Run selene
         run: selene src/ models/
+
+      - name: Build using Rojo
+        run: |
+          mkdir builds
+          rojo build --output builds/$OUTPUT_NAME.rbxm $BUILD_PROJECT
+          rojo build --output builds/$OUTPUT_NAME.rbxmx $BUILD_PROJECT
+
+      - name: Archive build files
+        uses: actions/upload-artifact@v6
+        with:
+          name: $OUTPUT_NAME
+          path: builds/
