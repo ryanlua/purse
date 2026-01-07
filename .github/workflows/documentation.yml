@@ -9,6 +9,9 @@ on:
       - "docs/**"
       - "mkdocs.yml"
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

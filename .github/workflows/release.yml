@@ -5,6 +5,9 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  contents: write
+
 env:
   OUTPUT_NAME: Purse
   BUILD_PROJECT: package.project.json
