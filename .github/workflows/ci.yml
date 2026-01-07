@@ -44,5 +44,6 @@ jobs:
       - name: Archive build files
         uses: actions/upload-artifact@v6
         with:
-          name: $OUTPUT_NAME
+          name: ${{ env.OUTPUT_NAME }}
           path: builds/
+          if-no-files-found: error
