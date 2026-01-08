@@ -1,8 +1,5 @@
 name: CI
 
-permissions:
-  contents: read
-
 on:
   pull_request:
     paths:
@@ -16,6 +13,9 @@ on:
 env:
   OUTPUT_NAME: Purse
   BUILD_PROJECT: package.project.json
+
+permissions:
+  contents: read
 
 jobs:
   build:
