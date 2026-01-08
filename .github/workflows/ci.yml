@@ -10,12 +10,12 @@ on:
       - ".github/workflows/ci.yml"
       - "**.luau"
 
+permissions:
+  contents: read
+
 env:
   OUTPUT_NAME: Purse
   BUILD_PROJECT: package.project.json
-
-permissions:
-  contents: read
 
 jobs:
   build:
