@@ -16,5 +16,5 @@
 local RunService = game:GetService("RunService")
 
 if not RunService:IsStudio() then
-	print("👛 Running Purse v1.1.1 by @WinnersTakesAll")
+	print("👛 Running Purse v1.1.2 by @WinnersTakesAll")
 end
