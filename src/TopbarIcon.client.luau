@@ -3,9 +3,6 @@
 local BackpackScript = require(script.Parent)
 local Icon = require(script.Parent.Parent.topbarplus)
 
-local ICON_SELECTED_IMAGE = "rbxasset://textures/ui/TopBar/inventoryOn.png"
-local ICON_DESELECTED_IMAGE = "rbxasset://textures/ui/TopBar/inventoryOff.png"
-
 local icon = Icon.new()
 icon:setLabel("backpack")
 icon:setOrder(-1)
