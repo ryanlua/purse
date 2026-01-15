@@ -1,6 +1,6 @@
 [package]
 name = "ryanlua/purse"
-description = "CoreGui decoupled version of the Roblox default backpack"
+description = "CoreGui decoupled Roblox default backpack"
 version = "1.1.2"
 license = "Apache-2.0"
 authors = ["Ryan Luu <ryan.luu@ryanluu.dev>"]
