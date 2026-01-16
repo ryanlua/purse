@@ -16,7 +16,7 @@
 
 Purse is a fork of the [default Roblox backpack](https://github.com/Roblox/Core-Scripts/blob/master/CoreScriptsRoot/Modules/BackpackScript.lua) decoupled from the CoreGui, allowing developers access to APIs that were previously unavailable and allowing for code modifications.
 
-![Screenshot of Purse](docs/assets/screenshot.png)
+![Screenshot of Purse with the inventory open](docs/assets/screenshot.png)
 
 For more information, see the [documentation](https://purse.luau.page/).
 

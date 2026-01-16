@@ -6,7 +6,7 @@ Purse is a fork of the [default Roblox backpack] decoupled from the CoreGui, all
 * Developer APIs for controlling the inventory
 * Not reliant on CoreGui permissions
 
-![Screenshot of Purse](assets/screenshot.png)
+![Screenshot of Purse with the inventory open](assets/screenshot.png)
 
 What Purse is not is being a major improvement over the CoreGui backpack but a copy of it so that developers can iterate on it themselves. They are no additional features beyond what the CoreGui backpack provides.
 
