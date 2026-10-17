@@ -4,7 +4,7 @@ registry = "test"
 
 [[package]]
 name = "ryanlua/purse"
-version = "1.1.6"
+version = "1.2.0"
 dependencies = [["topbarplus", "ryanlua/topbarplus@1.0.1"]]
 
 [[package]]

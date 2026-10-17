@@ -31,7 +31,7 @@
 const MarketplaceService = game:GetService("MarketplaceService")
 const RunService = game:GetService("RunService")
 
-const VERSION = "1.1.6"
+const VERSION = "1.2.0"
 
 -- Print attribution. Do not modify without reading above
 if not RunService:IsStudio() and RunService:IsClient() then
