@@ -19,6 +19,24 @@ BackpackGui.Parent = playerGui
 local FFlagMountCoreGuiBackpack = true -- ROBLOX deviation: always true for now
 -- local isInExperienceUIVREnabled = require(CorePackages.Workspace.Packages.SharedExperimentDefinition).isInExperienceUIVREnabled
 
+local FFlagSAToolEquipLuauFlag = true -- ROBLOX deviation: always true, DefineFastFlag is RobloxScriptSecurity
+-- Workspace.AuthorityMode may change at runtime, in which case we want this feature on
+local function featureSAToolEquipEnabled()
+	if FFlagSAToolEquipLuauFlag then -- ROBLOX deviation: remove SAToolEquipEngineFeature check, GetEngineFeature is LocalUserSecurity
+		return script:FindFirstChild("RequestToolEvent", true) ~= nil -- ROBLOX deviation: AuthorityMode is RobloxScriptSecurity, check if ServerAuthority script is enabled instead
+	else
+		return false
+	end
+end
+
+-- ROBLOX deviation START: use RemoteEvent instead of Player:RequestTool (RobloxScriptSecurity)
+local function RequestTool(tool: Tool?)
+	if const requestToolRemote = script:FindFirstChild("RequestToolEvent", true) then
+		requestToolRemote:FireServer(tool)
+	end
+end
+-- ROBLOX deviation END
+
 local BackpackScript = {}
 BackpackScript.OpenClose = nil -- Function to toggle open/close
 BackpackScript.IsHotbarVisible = false
@@ -358,6 +376,10 @@ local function EquipNewTool(tool) --NOTE: HopperBin
 		-- ActiveHopper = tool
 		-- ROBLOX deviation END
 	else
+		if featureSAToolEquipEnabled() then
+			RequestTool(tool) -- ROBLOX deviation: use RemoteEvent instead of Player:RequestTool
+		end
+
 		--Humanoid:EquipTool(tool) --NOTE: This would also unequip current Tool
 		tool.Parent = Character --TODO: Switch back to above line after EquipTool is fixed!
 	end
@@ -622,6 +644,9 @@ local function MakeSlot(parent, index)
 		local tool = slot.Tool
 		if tool then
 			if IsEquipped(tool) then --NOTE: HopperBin
+				if featureSAToolEquipEnabled() and not tool:IsA("HopperBin") then
+					RequestTool(nil) -- ROBLOX deviation: use RemoteEvent instead of Player:RequestTool
+				end
 				UnequipAllTools()
 			elseif tool.Parent == Backpack then
 				EquipNewTool(tool)
