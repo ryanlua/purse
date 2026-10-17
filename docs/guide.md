@@ -6,10 +6,10 @@ You can change the slot's equip color, currently blue, by modifying the `SLOT_EQ
 
 The following code sample changes the equip color to red.
 
-``` lua linenums="49" hl_lines="2"
---8<-- "src/init.luau:49:49"
+``` lua linenums="68" hl_lines="2"
+--8<-- "src/init.luau:68:68"
 local SLOT_EQUIP_COLOR = Color3.new(233 / 255, 90 / 255, 90 / 255) -- (1)!
---8<-- "src/init.luau:51:54"
+--8<-- "src/init.luau:70:73"
 ```
 
 1.  Changed from blue `#!lua Color3.new(90 / 255, 142 / 255, 233 / 255)` to red `#!lua Color3.new(233 / 255, 90 / 255, 90 / 255)`
@@ -41,18 +41,18 @@ You can increase the number of hotbar slots and inventory rows shown by changing
 
     `HOTBAR_SLOTS_VR` and `INVENTORY_ROWS_VR` are no longer used but are still included in the code. VR devices now use `INVENTORY_ROWS_FULL` and `HOTBAR_SLOTS_FULL`.
 
-``` lua linenums="67"
---8<-- "src/init.luau:67:77"
+``` lua linenums="86"
+--8<-- "src/init.luau:86:96"
 ```
 
 Constants suffixed with `_FULL` are for computer, console, and VR devices while constants suffixed with `_MINI` are for phone and tablet devices.
 
 The following code sample changes phone and tablet devices to have 5 hotbar slots.
 
-``` lua linenums="67" hl_lines="3"
---8<-- "src/init.luau:67:68"
+``` lua linenums="86" hl_lines="3"
+--8<-- "src/init.luau:86:87"
 local HOTBAR_SLOTS_MINI = 5 -- (1)!
---8<-- "src/init.luau:70:71"
+--8<-- "src/init.luau:89:90"
 ```
 
 1.  Changed from `#!lua 3` hotbar slots to `#!lua 5` hotbar slots
@@ -115,3 +115,15 @@ ContextActionService:BindAction(ACTION_NAME, handleAction, false, Enum.KeyCode.I
 1.  Changed from backquote <kbd>\`</kbd> key `#!lua Enum.KeyCode.Backquote` to <kbd>I</kbd> key `#!lua Enum.KeyCode.I`
 
 If you do not want any key to be bound to toggling the inventory, delete the line that binds the inventory toggle in whichever `TopbarIcon` or `ContextAction` script you use.
+
+## Enabling Server Authority
+
+If your experience uses [server authority], enable the [`ServerAuthority`][ServerAuthority] script under Purse so tools are equipped on the server. Scripts cannot read [`Workspace.AuthorityMode`][AuthorityMode], so Purse uses this script being enabled instead.
+
+!!! warning
+
+    Only enable the `ServerAuthority` script if `Workspace.AuthorityMode` is set to `Server`.
+
+  [server authority]: https://create.roblox.com/docs/projects/server-authority
+  [ServerAuthority]: https://github.com/ryanlua/purse/blob/main/src/ServerAuthority.server.luau
+  [AuthorityMode]: https://create.roblox.com/docs/reference/engine/classes/Workspace#AuthorityMode

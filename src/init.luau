@@ -19,6 +19,25 @@ BackpackGui.Parent = playerGui
 local FFlagMountCoreGuiBackpack = true -- ROBLOX deviation: always true for now
 -- local isInExperienceUIVREnabled = require(CorePackages.Workspace.Packages.SharedExperimentDefinition).isInExperienceUIVREnabled
 
+local FFlagSAToolEquipLuauFlag = true -- ROBLOX deviation: always true, DefineFastFlag is RobloxScriptSecurity
+-- Workspace.AuthorityMode may change at runtime, in which case we want this feature on
+local function featureSAToolEquipEnabled()
+	if FFlagSAToolEquipLuauFlag then -- ROBLOX deviation: remove SAToolEquipEngineFeature check, GetEngineFeature is LocalUserSecurity
+		return script:FindFirstChild("RequestToolEvent", true) ~= nil -- ROBLOX deviation: AuthorityMode is RobloxScriptSecurity, check if ServerAuthority script is enabled instead
+	else
+		return false
+	end
+end
+
+-- ROBLOX deviation START: use RemoteEvent instead of Player:RequestTool (RobloxScriptSecurity)
+local function RequestTool(tool: Tool?)
+	const requestToolRemote = script:FindFirstChild("RequestToolEvent", true)
+	if requestToolRemote then
+		requestToolRemote:FireServer(tool)
+	end
+end
+-- ROBLOX deviation END
+
 local BackpackScript = {}
 BackpackScript.OpenClose = nil -- Function to toggle open/close
 BackpackScript.IsHotbarVisible = false
@@ -341,6 +360,11 @@ end
 
 local function UnequipAllTools() --NOTE: HopperBin
 	if Humanoid then
+		-- ROBLOX deviation START: notify server on all unequip paths, not just slot select
+		if featureSAToolEquipEnabled() then
+			RequestTool(nil)
+		end
+		-- ROBLOX deviation END
 		Humanoid:UnequipTools()
 		if ActiveHopper then
 			DisableActiveHopper()
@@ -358,6 +382,10 @@ local function EquipNewTool(tool) --NOTE: HopperBin
 		-- ActiveHopper = tool
 		-- ROBLOX deviation END
 	else
+		if featureSAToolEquipEnabled() then
+			RequestTool(tool) -- ROBLOX deviation: use RemoteEvent instead of Player:RequestTool
+		end
+
 		--Humanoid:EquipTool(tool) --NOTE: This would also unequip current Tool
 		tool.Parent = Character --TODO: Switch back to above line after EquipTool is fixed!
 	end

@@ -13,6 +13,7 @@ This is optional and disabled by default, but it can be enabled using the [`Sand
 Purse uses the following capabilities:
 
 * **RunClientScript** - Run Purse on the client
+* **RunServerScript** - Equip tools on the server with server authority
 * **AccessOutsideWrite** - Access instances outside the container
 * **AssetRead** - Check for latest version
 * **AssetManagement** - Preload icon images
@@ -23,4 +24,5 @@ Purse uses the following capabilities:
 * **CreateInstances** - Create GUI instances
 * **Input** - Binding for equipping slots and toggling inventory
 * **Players** - Access player backpack
+* **RemoteEvent** - Request tools from the server with server authority
 * **UI** - Access player GUI
