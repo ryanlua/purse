@@ -115,15 +115,3 @@ ContextActionService:BindAction(ACTION_NAME, handleAction, false, Enum.KeyCode.I
 1.  Changed from backquote <kbd>\`</kbd> key `#!lua Enum.KeyCode.Backquote` to <kbd>I</kbd> key `#!lua Enum.KeyCode.I`
 
 If you do not want any key to be bound to toggling the inventory, delete the line that binds the inventory toggle in whichever `TopbarIcon` or `ContextAction` script you use.
-
-## Enabling Server Authority
-
-If your experience uses [server authority], enable the [`ServerAuthority`][ServerAuthority] script under Purse so tools are equipped on the server. Scripts cannot read [`Workspace.AuthorityMode`][AuthorityMode], so Purse uses this script being enabled instead.
-
-!!! warning
-
-    Only enable the `ServerAuthority` script if `Workspace.AuthorityMode` is set to `Server`.
-
-  [server authority]: https://create.roblox.com/docs/projects/server-authority
-  [ServerAuthority]: https://github.com/ryanlua/purse/blob/main/src/ServerAuthority.server.luau
-  [AuthorityMode]: https://create.roblox.com/docs/reference/engine/classes/Workspace#AuthorityMode

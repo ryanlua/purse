@@ -1,5 +1,10 @@
 --!strict
 
+--[[
+	Disable this script if server authority is disabled to avoid equipping tool lag
+	https://create.roblox.com/docs/projects/server-authority
+]]
+
 const requestToolEvent = Instance.new("RemoteEvent")
 requestToolEvent.Name = "RequestToolEvent"
 requestToolEvent.Parent = script
