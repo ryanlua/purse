@@ -39,16 +39,18 @@ if not RunService:IsStudio() and RunService:IsClient() then
 end
 
 -- Check for updates. You may modify the below
+local latestVersion: string?
+
 const success, result = pcall(function()
 	return MarketplaceService:GetProductInfoAsync(112061170330936)
 end)
 
 if success then
-	if const latestVersion = string.match(result.Name, "v(%d+%.%d+%.%d+)") then
-		if latestVersion ~= VERSION then
-			warn(
-				`A new version of Purse (v{VERSION} -> v{latestVersion}) is available: https://create.roblox.com/store/asset/112061170330936`
-			)
-		end
-	end
+	latestVersion = string.match(result.Name, "v(%d+%.%d+%.%d+)")
+end
+
+if latestVersion and latestVersion ~= VERSION then
+	warn(
+		`A new version of Purse (v{VERSION} -> v{latestVersion}) is available: https://create.roblox.com/store/asset/112061170330936`
+	)
 end

@@ -31,7 +31,8 @@ end
 
 -- ROBLOX deviation START: use RemoteEvent instead of Player:RequestTool (RobloxScriptSecurity)
 local function RequestTool(tool: Tool?)
-	if const requestToolRemote = script:FindFirstChild("RequestToolEvent", true) then
+	const requestToolRemote = script:FindFirstChild("RequestToolEvent", true)
+	if requestToolRemote then
 		requestToolRemote:FireServer(tool)
 	end
 end
