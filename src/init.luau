@@ -359,6 +359,11 @@ end
 
 local function UnequipAllTools() --NOTE: HopperBin
 	if Humanoid then
+		-- ROBLOX deviation START: notify server on all unequip paths, not just slot select
+		if featureSAToolEquipEnabled() then
+			RequestTool(nil)
+		end
+		-- ROBLOX deviation END
 		Humanoid:UnequipTools()
 		if ActiveHopper then
 			DisableActiveHopper()
@@ -644,9 +649,6 @@ local function MakeSlot(parent, index)
 		local tool = slot.Tool
 		if tool then
 			if IsEquipped(tool) then --NOTE: HopperBin
-				if featureSAToolEquipEnabled() and not tool:IsA("HopperBin") then
-					RequestTool(nil) -- ROBLOX deviation: use RemoteEvent instead of Player:RequestTool
-				end
 				UnequipAllTools()
 			elseif tool.Parent == Backpack then
 				EquipNewTool(tool)
