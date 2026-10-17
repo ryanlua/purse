@@ -384,7 +384,6 @@ local function EquipNewTool(tool) --NOTE: HopperBin
 	else
 		if featureSAToolEquipEnabled() then
 			RequestTool(tool) -- ROBLOX deviation: use RemoteEvent instead of Player:RequestTool
-			return -- ROBLOX deviation: wait for the server to equip, parenting locally has no grip weld so the tool falls
 		end
 
 		--Humanoid:EquipTool(tool) --NOTE: This would also unequip current Tool
