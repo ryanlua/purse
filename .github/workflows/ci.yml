@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.2.1
       - name: Install Wally packages
@@ -31,7 +31,7 @@ jobs:
           rojo build package.project.json --output Purse.rbxm
           rojo build package.project.json --output Purse.rbxmx
       - name: Archive build files
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: Purse
           path: |
