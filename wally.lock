@@ -3,11 +3,11 @@
 registry = "test"
 
 [[package]]
-name = "ryanlua/purse"
-version = "1.2.0"
-dependencies = [["topbarplus", "ryanlua/topbarplus@1.0.1"]]
+name = "1foreverhd/topbarplus"
+version = "3.5.0"
+dependencies = []
 
 [[package]]
-name = "ryanlua/topbarplus"
-version = "1.0.1"
-dependencies = []
+name = "ryanlua/purse"
+version = "1.2.0"
+dependencies = [["topbarplus", "1foreverhd/topbarplus@3.5.0"]]

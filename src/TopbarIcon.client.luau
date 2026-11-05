@@ -4,10 +4,9 @@ const BackpackScript = require(script.Parent)
 const Icon = require(script.Parent.Parent.topbarplus)
 
 const icon = Icon.new()
-icon:modifyTheme({
-	{ "IconLabelContainer", "TargetWidth", 0 }, -- Force minimum width
-	{ "IconLabel", "AutoLocalize", false }, -- Don't translate font icon
-})
+icon:modifyTheme({ "IconLabel", "AutoLocalize", false }) -- Don't translate font icon
+const iconLabelContainer = icon:getInstance("IconLabelContainer") :: Instance
+iconLabelContainer:SetAttribute("TargetWidth", 0) -- Force minimum width
 icon:setLabel("backpack")
 icon:setOrder(-1)
 icon:setTextSize(24)
