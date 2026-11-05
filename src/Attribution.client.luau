@@ -32,6 +32,7 @@ const MarketplaceService = game:GetService("MarketplaceService")
 const RunService = game:GetService("RunService")
 
 const VERSION = "1.2.0"
+const ASSET_ID = 112061170330936
 
 -- Print attribution. Do not modify without reading above
 if not RunService:IsStudio() and RunService:IsClient() then
@@ -53,7 +54,7 @@ end
 local latestVersion: string?
 
 const success, result = pcall(function()
-	return MarketplaceService:GetProductInfoAsync(112061170330936)
+	return MarketplaceService:GetProductInfoAsync(ASSET_ID)
 end)
 
 if success then
@@ -62,6 +63,6 @@ end
 
 if latestVersion and isNewerVersion(latestVersion, VERSION) then
 	warn(
-		`A new version of Purse (v{VERSION} -> v{latestVersion}) is available: https://create.roblox.com/store/asset/112061170330936`
+		`A new version of Purse (v{VERSION} -> v{latestVersion}) is available: https://create.roblox.com/store/asset/{ASSET_ID}`
 	)
 end
