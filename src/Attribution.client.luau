@@ -40,6 +40,16 @@ if not RunService:IsStudio() and RunService:IsClient() then
 end
 
 -- Check for updates. You may modify the below
+local latestVersion: string?
+
+const success, result = pcall(function()
+	return MarketplaceService:GetProductInfoAsync(ASSET_ID)
+end)
+
+if success then
+	latestVersion = string.match(result.Name, "v(%d+%.%d+%.%d+)")
+end
+
 const function isNewerVersion(latest: string, current: string): boolean
 	const latestParts, currentParts = latest:split("."), current:split(".")
 	for index = 1, 3 do
@@ -49,16 +59,6 @@ const function isNewerVersion(latest: string, current: string): boolean
 		end
 	end
 	return false
-end
-
-local latestVersion: string?
-
-const success, result = pcall(function()
-	return MarketplaceService:GetProductInfoAsync(ASSET_ID)
-end)
-
-if success then
-	latestVersion = string.match(result.Name, "v(%d+%.%d+%.%d+)")
 end
 
 if latestVersion and isNewerVersion(latestVersion, VERSION) then
