@@ -39,6 +39,17 @@ if not RunService:IsStudio() and RunService:IsClient() then
 end
 
 -- Check for updates. You may modify the below
+const function isNewerVersion(latest: string, current: string): boolean
+	const latestParts, currentParts = latest:split("."), current:split(".")
+	for index = 1, 3 do
+		const latestPart, currentPart = tonumber(latestParts[index]) or 0, tonumber(currentParts[index]) or 0
+		if latestPart ~= currentPart then
+			return latestPart > currentPart
+		end
+	end
+	return false
+end
+
 local latestVersion: string?
 
 const success, result = pcall(function()
@@ -49,7 +60,7 @@ if success then
 	latestVersion = string.match(result.Name, "v(%d+%.%d+%.%d+)")
 end
 
-if latestVersion and latestVersion ~= VERSION then
+if latestVersion and isNewerVersion(latestVersion, VERSION) then
 	warn(
 		`A new version of Purse (v{VERSION} -> v{latestVersion}) is available: https://create.roblox.com/store/asset/112061170330936`
 	)
