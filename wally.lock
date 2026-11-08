@@ -9,5 +9,5 @@ dependencies = []
 
 [[package]]
 name = "ryanlua/purse"
-version = "1.2.0"
+version = "1.2.1"
 dependencies = [["topbarplus", "1foreverhd/topbarplus@3.5.0"]]

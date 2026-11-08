@@ -31,7 +31,7 @@
 const MarketplaceService = game:GetService("MarketplaceService")
 const RunService = game:GetService("RunService")
 
-const VERSION = "1.2.0"
+const VERSION = "1.2.1"
 const ASSET_ID = 112061170330936
 
 -- Print attribution. Do not modify without reading above
