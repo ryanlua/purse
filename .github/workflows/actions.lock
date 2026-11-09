@@ -18,7 +18,7 @@ workflows:
         - 'actions/download-artifact@v8.0.2'
         - 'compeydev/setup-rokit@v0.2.1'
         - 'ryanlua/update-roblox-asset@v0.1.0'
-        - 'softprops/action-gh-release@v3.0.3'
+        - 'softprops/action-gh-release@v3.0.4'
 dependencies:
     'actions/cache@v5':
         ref: 'v5'
@@ -79,8 +79,8 @@ dependencies:
         commit: 'sha1-eedb89019fe6bd7bfff8ddc328b124b7c8aa5a4f'
         owner_id: 80087248
         repo_id: 1224065501
-    'softprops/action-gh-release@v3.0.3':
-        ref: 'v3.0.3'
-        commit: 'sha1-efb35369e0ad2afab669f228072c1b0d510eae64'
+    'softprops/action-gh-release@v3.0.4':
+        ref: 'v3.0.4'
+        commit: 'sha1-8a0cd651e5b2365bd640854a3fa5dfc70e4875f3'
         owner_id: 2242
         repo_id: 204253808
