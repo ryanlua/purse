@@ -9,7 +9,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 homepage = "https://purse.luau.page"
 repository = "https://github.com/ryanlua/purse"
 exclude = ["**"]
-include = ["LICENSE.md", "README.md", "src", "src/*", "default.project.json", "wally.toml"]
+include = ["LICENSE.md", "README.md", "default.project.json", "src", "src/*", "wally.toml"]
 
 [dependencies]
 topbarplus = "1foreverhd/topbarplus@3.5.0"
