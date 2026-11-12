@@ -1,0 +1,43 @@
+{
+  "name": "Purse",
+  "emitLegacyScripts": false,
+  "tree": {
+    "$path": "purse.project.json",
+    "ThumbnailCamera": {
+      "$className": "Camera",
+      "$properties": {
+        "CFrame": [
+          0,
+          3.357,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      "Part": {
+        "$className": "Part",
+        "$properties": {
+          "Size": [
+            4,
+            1,
+            4
+          ]
+        },
+        "Decal": {
+          "$className": "Decal",
+          "$properties": {
+            "Face": "Top",
+            "Texture": "rbxassetid://99673592131538"
+          }
+        }
+      }
+    }
+  }
+}

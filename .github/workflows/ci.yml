@@ -20,16 +20,16 @@ jobs:
       - name: Install Wally packages
         run: |
           wally install
-          rojo sourcemap package.project.json --output sourcemap.json
+          rojo sourcemap purse.project.json --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
       - name: Run StyLua
-        run: stylua --check src/ models/
+        run: stylua --check src/
       - name: Run selene
-        run: selene src/ models/
+        run: selene src/
       - name: Build Rojo project
         run: |
-          rojo build package.project.json --output Purse.rbxm
-          rojo build package.project.json --output Purse.rbxmx
+          rojo build model.project.json --output Purse.rbxm
+          rojo build model.project.json --output Purse.rbxmx
       - name: Archive build files
         uses: actions/upload-artifact@v7.0.2
         with:

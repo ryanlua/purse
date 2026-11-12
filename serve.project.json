@@ -6,7 +6,7 @@
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
       "Purse": {
-        "$path": "models/Purse"
+        "$path": "purse.project.json"
       }
     }
   }

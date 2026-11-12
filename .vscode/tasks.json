@@ -4,9 +4,9 @@
     {
       "label": "Build model",
       "type": "shell",
-      "command": "rojo build package.project.json --output Purse.rbxm && rojo build package.project.json --output Purse.rbxmx",
+      "command": "rojo build model.project.json --output Purse.rbxm && rojo build model.project.json --output Purse.rbxmx",
       "windows": {
-        "command": "rojo build package.project.json --output Purse.rbxm; rojo build package.project.json --output Purse.rbxmx"
+        "command": "rojo build model.project.json --output Purse.rbxm; rojo build model.project.json --output Purse.rbxmx"
       },
       "problemMatcher": [],
       "group": {
