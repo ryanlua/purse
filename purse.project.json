@@ -1,0 +1,20 @@
+{
+  "name": "Purse",
+  "emitLegacyScripts": false,
+  "tree": {
+    "$className": "ModuleScript",
+    "$properties": {
+      "Source": "return require(script.Packages[\"purse\"])\n",
+      "Capabilities": {
+        "SecurityCapabilities": 9007428533750528
+      },
+      "Sandboxed": false
+    },
+    "Packages": {
+      "$path": "Packages",
+      "purse": {
+        "$path": "default.project.json"
+      }
+    }
+  }
+}

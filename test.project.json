@@ -6,7 +6,7 @@
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
       "Purse": {
-        "$path": "package.project.json"
+        "$path": "purse.project.json"
       }
     }
   }
