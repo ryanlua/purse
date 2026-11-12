@@ -9,6 +9,7 @@ on:
       - "docs/**"
       - "src/**"
       - "mkdocs.yml"
+      - "main.py"
 
 permissions:
   contents: read
