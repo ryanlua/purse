@@ -23,9 +23,9 @@ jobs:
           rojo sourcemap package.project.json --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
       - name: Run StyLua
-        run: stylua --check src/ models/
+        run: stylua --check src/
       - name: Run selene
-        run: selene src/ models/
+        run: selene src/
       - name: Build Rojo project
         run: |
           rojo build package.project.json --output Purse.rbxm

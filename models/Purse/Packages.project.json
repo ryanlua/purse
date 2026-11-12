@@ -1,9 +1,0 @@
-{
-  "name": "Packages",
-  "tree": {
-    "$path": "../../Packages",
-    "purse": {
-      "$path": "../../default.project.json"
-    }
-  }
-}
