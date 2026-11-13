@@ -10,11 +10,11 @@ Purse is a fork of the [default Roblox backpack] decoupled from the CoreGui, all
 
 Purse is not a major improvement over the CoreGui backpack; it is a copy of it, so developers can iterate on it themselves. There are no additional features beyond what the CoreGui backpack provides.
 
-  [default Roblox backpack]: https://github.com/Roblox/Core-Scripts/blob/master/CoreScriptsRoot/Modules/BackpackScript.lua
+  [default Roblox backpack]: https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/scripts/CoreScripts/Modules/BackpackScript.lua
 
 ## Demo
 
-You can play the [Purse Demo] on Roblox to try out Purse before using it. The place is uncopylocked so you can access an editable copy of the experience
+You can play the [Purse Demo] on Roblox to try out Purse before using it. The place is uncopylocked so you can access an editable copy of the experience.
 
 [Play on Roblox][Purse Demo]{ .md-button .md-button--primary }
 

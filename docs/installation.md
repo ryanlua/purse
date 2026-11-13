@@ -29,7 +29,7 @@ Purse uses [RunContext] to run anywhere, so you do not need to move it from [Wor
 
 1. Open Roblox Studio and create a new place or open an existing place.
 
-1. From Studio's Window menu or Home tab toolbar, open the [Toolbox] and select the **Inventory** tab.
+1. From Studio's Window menu or Home tab toolbar, open the [Toolbox] window and select the **Inventory** tab.
 
     ![Toolbox](https://prod.docsiteassets.roblox.com/assets/studio/general/Toolbar-Toolbox.png)
 
@@ -72,9 +72,9 @@ Purse uses [RunContext] to run anywhere, so you do not need to move it from [Wor
 
 1. Open Roblox Studio and create a new place or open an existing place.
 
-1. In the [Explorer] window, insert **Purse** into [`ReplicatedStorage`][ReplicatedStorage].
+1. Go to **File** &rang; **Import Roblox Model** and select the **Purse** model file you downloaded from GitHub.
 
-1. Select the **Purse** model file you downloaded from GitHub.
+1. In the [Explorer] window, move the **Purse** model from [`Workspace`][Workspace] into [`ReplicatedStorage`][ReplicatedStorage].
 
 ## Wally
 

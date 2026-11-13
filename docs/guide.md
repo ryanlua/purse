@@ -82,7 +82,7 @@ Your explorer window should look similar to the following when you disable the `
 
 !!! warning
 
-    If you do not enable the `ContextAction` script, players will not be able to open the backpack since the topbar icon, which handles binding, is disabled.
+    If you do not enable the `ContextAction` script, players will not be able to open the backpack since the topbar icon, which handles binding, is disabled and Purse will be disabled unless another script requires it.
 
   [TopbarIcon]: https://github.com/ryanlua/purse/blob/main/src/TopbarIcon.client.luau
   [ContextAction]: https://github.com/ryanlua/purse/blob/main/src/ContextAction.client.luau

@@ -1,6 +1,6 @@
 [Script capabilities] are used to sandbox Purse and tools to ensure safety and prevent malicious code.
 
-This is optional and disabled by default, but it can be enabled using the [`Sandboxed`][Sandboxed] property.
+This is optional and disabled by default unless inserted from the Toolbox, but it can be enabled using the [`Sandboxed`][Sandboxed] property.
 
 !!! warning
 

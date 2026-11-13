@@ -14,7 +14,7 @@
   [![Discord](https://raw.githubusercontent.com/gist/ryanlua/fd42012f04cc39106fb57402dd518433/raw/link-discord-compact.svg)](https://discord.gg/N2KEnHzrsW)
 </div>
 
-Purse is a fork of the [default Roblox backpack](https://github.com/Roblox/Core-Scripts/blob/master/CoreScriptsRoot/Modules/BackpackScript.lua) decoupled from the CoreGui, allowing developers access to APIs that were previously unavailable and allowing for code modifications.
+Purse is a fork of the [default Roblox backpack](https://github.com/MaximumADHD/Roblox-Client-Tracker/blob/roblox/scripts/CoreScripts/Modules/BackpackScript.lua) decoupled from the CoreGui, allowing developers access to APIs that were previously unavailable and allowing for code modifications.
 
 ![Screenshot of Purse with the inventory open](docs/assets/screenshot.png)
 

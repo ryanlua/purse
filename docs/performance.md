@@ -1,4 +1,4 @@
-Purse only runs on the client and has zero performance impact on the server.
+Purse only runs on the client and has zero performance impact on the server (with server authority disabled).
 
 All performance benchmarks are measured on the client using the [Developer Console] in Roblox Studio testing.
 
