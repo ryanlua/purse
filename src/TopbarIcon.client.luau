@@ -5,9 +5,10 @@ const Icon = require(script.Parent.Parent.topbarplus)
 
 const icon = Icon.new()
 icon:modifyTheme({
-	{ "IconLabel", "AutoLocalize", false }, -- Don't translate font icon
-	{ "PaddingLeft", "Size", UDim2.new(0, 4, 1, 0) }, -- Remove icon left padding
-	{ "PaddingRight", "Size", UDim2.new(0, 4, 1, 0) }, -- Remove icon right padding
+	{ "IconLabel", "AutoLocalize", false },
+	{ "PaddingLeft", "Size", UDim2.new(0, 4, 1, 0) },
+	{ "PaddingRight", "Size", UDim2.new(0, 4, 1, 0) },
+	{ "IconLabel", "TextSize", 24 },
 })
 icon:setLabel("backpack")
 icon:setOrder(-1)
